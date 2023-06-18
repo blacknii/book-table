@@ -74,7 +74,7 @@ export const Table = (props) => {
 
   return (
     <div>
-      <div className="pagination">
+      <div className={styles["pagination"]}>
         <button
           onClick={() => {
             gotoPage(0);

@@ -1,25 +1,25 @@
 import React from "react";
 import styles from "./details.module.css";
-import defaultCover from "./default_cover.jpg"; // make sure the path to your image is correct
+import defaultCover from "../../assets/default_cover.jpg"; // make sure the path to your image is correct
 
 const Details = (props) => {
   const showInfo = (index) => {
     const book = props.BooksData.find((row) => row.id === index);
     if (!book)
       return (
-        <div className="book-empty">
+        <div className={styles["book-empty"]}>
           <h2>Select a row for more information</h2>
         </div>
       );
 
     return (
-      <div className="book-info">
+      <div className={styles["book-info"]}>
         <img
           src={book.thumbnail || defaultCover}
           alt={book.title}
-          className="book-image"
+          className={styles["book-image"]}
         />
-        <div className="book-details">
+        <div className={styles["book-details"]}>
           <h2>{book.title}</h2>
           <p>
             <strong>Publisher:</strong> {book.publisher || "N/A"}
@@ -47,7 +47,7 @@ const Details = (props) => {
     );
   };
 
-  return <div className="info">{showInfo(props.data)}</div>;
+  return <div className={styles["info"]}>{showInfo(props.data)}</div>;
 };
 
 export default Details;

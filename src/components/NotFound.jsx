@@ -3,7 +3,7 @@ import styles from "./notFound.module.css";
 
 export default function NotFound() {
   return (
-    <div className="notfound">
+    <div className={styles["notfound"]}>
       <h2>Page not found!</h2>
       <p>
         Go to the <Link to="/">Homepage</Link>.

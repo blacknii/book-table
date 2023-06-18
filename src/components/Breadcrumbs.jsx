@@ -6,7 +6,7 @@ function Breadcrumbs(props) {
   const len = location.pathname.split("/").length;
   console.log(len);
   return (
-    <div className="breadcrumbs">
+    <div className={styles["breadcrumbs"]}>
       {location.pathname !== "/" &&
         len <= 5 &&
         location.pathname.includes("/table/") &&

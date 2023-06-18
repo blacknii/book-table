@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./search.module.css";
 import { Link } from "react-router-dom";
-import { useAuthorData } from "./useAuthorData"; // import the new hook
+import { useAuthorData } from "../data/useAuthorData"; // import the new hook
 
 function Search() {
   const [search, setSearch] = useState("");
@@ -14,10 +14,10 @@ function Search() {
   };
 
   return (
-    <div className="Search">
-      <h1 className="title">AUTHORS</h1>
-      <h2 className="subtitle">Search for an Author</h2>
-      <div className="search">
+    <div className={styles["search"]}>
+      <h1 className={styles["title"]}>AUTHORS</h1>
+      <h2 className={styles["subtitle"]}>Search for an Author</h2>
+      <div className={styles["search"]}>
         <input
           type="text"
           placeholder="Enter Your Author Name"
@@ -26,10 +26,14 @@ function Search() {
           onKeyPress={handleKeyPress} // added handleKeyPress event
         />
       </div>
-      <div className="authors">
+      <div className={styles["authors"]}>
         {authors.map((author) => (
-          <Link to={`table/${author}/1`} className="authorLink" key={author}>
-            <h3 className="authorName">{author}</h3>
+          <Link
+            to={`table/${author}/1`}
+            className={styles["authorLink"]}
+            key={author}
+          >
+            <h3 className={styles["authorName"]}>{author}</h3>
           </Link>
         ))}
       </div>

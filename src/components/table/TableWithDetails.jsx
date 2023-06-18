@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import BasicTableWithDetails from "./BasicTableWithDetails";
-import InfoPanel from "./InfoPanel";
+import Table from "./Table";
+import Details from "./Details";
 import styles from "./tableWithDetails.module.css";
 
 import { useParams } from "react-router-dom";
-import { useBooksData } from "./useBooksData";
+import { useBooksData } from "../../data/useBooksData";
 
 function TableWithDetails(props) {
   const params = useParams();
@@ -32,15 +32,15 @@ function TableWithDetails(props) {
   }, [author, pageId, bookId]);
 
   return (
-    <div className="TableWithDetails">
-      <BasicTableWithDetails
+    <div className={styles["table"]}>
+      <Table
         getInfo={handleRowClick}
         page={pageId}
         book={bookId}
         author={author}
         BooksData={BooksData}
       />
-      <InfoPanel data={data} BooksData={BooksData} />
+      <Details data={data} BooksData={BooksData} />
     </div>
   );
 }
