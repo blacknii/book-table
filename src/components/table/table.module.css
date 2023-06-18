@@ -1,0 +1,9 @@
+.table {
+  display: flex;
+  flex-direction: column;
+  max-width: 1500px;
+  gap: 50px;
+  align-items: center;
+  margin: 6rem 3rem;
+  /* background-color: rgb(234, 234, 245); */
+}
