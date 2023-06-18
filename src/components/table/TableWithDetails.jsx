@@ -12,8 +12,6 @@ function TableWithDetails(props) {
   const pageId = params.pageId;
   const bookId = params.bookId;
 
-  console.log(params, author, pageId, bookId);
-
   const [data, setData] = useState(0);
 
   const handleRowClick = (index) => {
@@ -21,11 +19,9 @@ function TableWithDetails(props) {
   };
   //J. R. R. Tolkien
   const BooksData = useBooksData(author);
-
-  // console.log(author);
+  console.log(BooksData);
 
   useEffect(() => {
-    // console.log(author);
     props.breadcrumbsNavigation(author, 1);
     props.breadcrumbsNavigation(pageId, 2);
     props.breadcrumbsNavigation(bookId, 3);

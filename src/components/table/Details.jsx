@@ -22,6 +22,9 @@ const Details = (props) => {
         <div className={styles["book-details"]}>
           <h2>{book.title}</h2>
           <p>
+            <strong>Author:</strong> {book.author || "N/A"}
+          </p>
+          <p>
             <strong>Publisher:</strong> {book.publisher || "N/A"}
           </p>
           <p>

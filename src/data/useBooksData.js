@@ -42,6 +42,9 @@ export function useBooksData(author) {
                   thumbnail:
                     book.volumeInfo.imageLinks &&
                     book.volumeInfo.imageLinks.thumbnail,
+                  author: book.volumeInfo.authors
+                    ? book.volumeInfo.authors.join(", ")
+                    : "N/A",
                 });
                 bookIDs.add(book.id);
               }

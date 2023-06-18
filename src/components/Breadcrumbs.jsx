@@ -4,7 +4,6 @@ import styles from "./breadcrumbs.module.css";
 function Breadcrumbs(props) {
   const location = useLocation();
   const len = location.pathname.split("/").length;
-  console.log(len);
   return (
     <div className={styles["breadcrumbs"]}>
       {location.pathname !== "/" &&
@@ -13,9 +12,9 @@ function Breadcrumbs(props) {
         props.arr.map(
           (e) =>
             e[1] && (
-              <>
-                <Link to={e[0]}>{e[1]}</Link>
-              </>
+              <Link key={e[1]} to={e[0]}>
+                {e[1]}
+              </Link>
             )
         )}
     </div>

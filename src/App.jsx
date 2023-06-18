@@ -30,35 +30,21 @@ function App() {
     setArr((prevArr) => {
       const newArr = [...prevArr];
       newArr[index][1] = value;
-      console.log("----------------");
       newArr.forEach((e, i) => {
-        console.log(e, i);
         if (i === 1 && e[1] !== undefined) {
-          console.log((e[0] = "/table/" + newArr[1][1] + "/" + "1"));
+          e[0] = "/table/" + newArr[1][1] + "/" + "1";
         } else if (i === 2 && e[1] !== undefined) {
-          console.log((e[0] = "/table/" + newArr[1][1] + "/" + newArr[2][1]));
+          e[0] = "/table/" + newArr[1][1] + "/" + newArr[2][1];
         } else if (i === 3 && e[1] !== undefined) {
-          console.log(
-            (e[0] =
-              "/table/" +
-              newArr[1][1] +
-              "/" +
-              newArr[2][1] +
-              "/" +
-              newArr[3][1])
-          );
+          e[0] =
+            "/table/" + newArr[1][1] + "/" + newArr[2][1] + "/" + newArr[3][1];
         }
       });
-      console.log(newArr);
-      // console.log(value, index);
-      // console.log(newArr);
       return newArr;
     });
   };
 
-  useEffect(() => {
-    // console.log(arr);
-  }, [arr]);
+  useEffect(() => {}, [arr]);
 
   return (
     <BrowserRouter>
