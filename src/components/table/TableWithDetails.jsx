@@ -17,7 +17,7 @@ function TableWithDetails() {
   const handleRowClick = (index) => {
     setData(index);
   };
-  //J. R. R. Tolkien
+
   const BooksData = useBooksData(author);
 
   return (
@@ -29,7 +29,7 @@ function TableWithDetails() {
         author={author}
         BooksData={BooksData}
       />
-      <Details data={data} BooksData={BooksData} />
+      <Details bookId={bookId} BooksData={BooksData} />
     </div>
   );
 }
