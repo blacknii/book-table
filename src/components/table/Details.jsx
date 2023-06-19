@@ -54,7 +54,7 @@ const Details = (props) => {
 };
 
 Details.propTypes = {
-  data: PropTypes.string,
+  bookId: PropTypes.string,
   BooksData: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,

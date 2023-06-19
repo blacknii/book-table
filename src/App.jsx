@@ -15,12 +15,9 @@ function App() {
         <Routes>
           <Route index element={<Navigate to="/search" />} />
           <Route path="/search" element={<Search />} />
-
           <Route path="/error" element={<NotFound />} />
-
           <Route path="/search/:author/*" element={<TableWithDetails />} />
           <Route path="/search/:author" element={<Navigate to="1" replace />} />
-
           <Route
             path="/search/:author/:pageId/"
             element={<TableWithDetails />}
@@ -28,6 +25,10 @@ function App() {
           <Route
             path="/search/:author/:pageId/:bookId"
             element={<TableWithDetails />}
+          />
+          <Route
+            path="/search/:author/:pageId/:bookId/*"
+            element={<Navigate to="/error" />}
           />
           <Route path="*" element={<Navigate to="/error" />} />
         </Routes>

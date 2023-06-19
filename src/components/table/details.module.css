@@ -9,19 +9,21 @@
 
 .book-empty {
   color: #457b9d;
-
   text-align: center;
 }
 
 .book-info {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
+  align-items: center;
 }
 
 .book-image {
-  width: 200px;
+  width: 220px;
   height: auto;
   margin-right: 20px;
+  background-size: contain;
 }
 
 .book-details h2 {
