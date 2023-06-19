@@ -14,10 +14,6 @@ export const Table = (props) => {
     String(props.page * 10 + (props.book - 1) - 10)
   );
 
-  useEffect(() => {
-    props.getInfo(parseInt(props.book) + (props.page - 1) * 10);
-  }, []);
-
   const {
     getTableProps,
     getTableBodyProps,
@@ -44,7 +40,6 @@ export const Table = (props) => {
 
   const handleRowClick = (row) => {
     setSelectedRowId(row.id);
-    props.getInfo(row.allCells[0].value);
     navigate(
       "/search/" +
         props.author +
@@ -70,7 +65,6 @@ export const Table = (props) => {
     }
 
     setSelectedRowId(newId);
-    props.getInfo(props.book);
   }, [props, props.book, page]);
 
   return (
@@ -154,7 +148,6 @@ export const Table = (props) => {
 };
 
 Table.propTypes = {
-  getInfo: PropTypes.func,
   page: PropTypes.string,
   book: PropTypes.string,
   author: PropTypes.string,

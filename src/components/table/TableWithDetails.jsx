@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Table from "./Table";
 import Details from "./Details";
 import styles from "./tableWithDetails.module.css";
@@ -12,18 +11,11 @@ function TableWithDetails() {
   const pageId = params.pageId;
   const bookId = params.bookId;
 
-  const [data, setData] = useState("");
-
-  const handleRowClick = (index) => {
-    setData(index);
-  };
-
   const BooksData = useBooksData(author);
 
   return (
     <div className={styles["table"]}>
       <Table
-        getInfo={handleRowClick}
         page={pageId}
         book={bookId}
         author={author}
