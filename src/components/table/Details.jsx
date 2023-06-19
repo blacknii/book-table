@@ -22,28 +22,28 @@ const Details = (props) => {
         <div className={styles["book-details"]}>
           <h2>{book.title}</h2>
           <p>
-            <strong>Author:</strong> {book.author || "N/A"}
+            <strong>Author:</strong> {book.author}
           </p>
           <p>
-            <strong>Publisher:</strong> {book.publisher || "N/A"}
+            <strong>Publisher:</strong> {book.publisher}
           </p>
           <p>
-            <strong>Published Date:</strong> {book.publishedDate || "N/A"}
+            <strong>Published Date:</strong> {book.publishedDate}
           </p>
           <p>
-            <strong>Page Count:</strong> {book.pageCount || "N/A"}
+            <strong>Page Count:</strong> {book.pageCount}
           </p>
           <p>
-            <strong>Language:</strong> {book.language || "N/A"}
+            <strong>Language:</strong> {book.language}
           </p>
           <p>
-            <strong>Categories:</strong> {book.categories || "N/A"}
+            <strong>Categories:</strong> {book.categories}
           </p>
           <p>
-            <strong>Snippet:</strong> {book.snippet || "N/A"}
+            <strong>Snippet:</strong> {book.snippet}
           </p>
           <p>
-            <strong>Description:</strong> {book.description || "N/A"}
+            <strong>Description:</strong> {book.description}
           </p>
         </div>
       </div>
@@ -54,7 +54,7 @@ const Details = (props) => {
 };
 
 Details.propTypes = {
-  bookId: PropTypes.string,
+  data: PropTypes.string,
   BooksData: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,

@@ -18,14 +18,17 @@ export function useBooksData(author) {
             if (!bookIDs.has(book.id)) {
               newBooks.push({
                 id: book.id,
-                title: book.volumeInfo.title,
-                description: book.volumeInfo.description,
-                categories: book.volumeInfo.categories,
-                publisher: book.volumeInfo.publisher,
-                publishedDate: book.volumeInfo.publishedDate,
-                pageCount: book.volumeInfo.pageCount,
-                language: book.volumeInfo.language,
-                snippet: book.searchInfo && book.searchInfo.textSnippet,
+                title: book.volumeInfo.title || "N/A",
+                description: book.volumeInfo.description || "N/A",
+                categories: book.volumeInfo.categories || "N/A",
+                publisher: book.volumeInfo.publisher || "N/A",
+                publishedDate: book.volumeInfo.publishedDate || "N/A",
+                pageCount: book.volumeInfo.pageCount
+                  ? book.volumeInfo.pageCount
+                  : "N/A",
+                language: book.volumeInfo.language || "N/A",
+                snippet:
+                  (book.searchInfo && book.searchInfo.textSnippet) || "N/A",
                 thumbnail:
                   book.volumeInfo.imageLinks &&
                   book.volumeInfo.imageLinks.thumbnail,

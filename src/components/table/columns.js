@@ -10,14 +10,15 @@ export const COLUMNS = [
     accessor: "title",
   },
   {
+    Header: "Author",
+    Footer: "Author",
+    accessor: "author",
+    Cell: ({ value }) => (Array.isArray(value) ? value.join(", ") : value),
+  },
+  {
     Header: "Publisher",
     Footer: "Publisher",
     accessor: "publisher",
-  },
-  {
-    Header: "Page Count",
-    Footer: "Page Count",
-    accessor: "pageCount",
   },
   {
     Header: "Categories",
@@ -25,8 +26,8 @@ export const COLUMNS = [
     accessor: "categories",
   },
   {
-    Header: "Author",
-    Footer: "Author",
-    accessor: "author",
+    Header: "Page Count",
+    Footer: "Page Count",
+    accessor: "pageCount",
   },
 ];
