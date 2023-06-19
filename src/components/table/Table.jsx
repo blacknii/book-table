@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import PropTypes from "prop-types";
 import { useTable, usePagination, useRowSelect } from "react-table";
 import { COLUMNS } from "./columns";
 import styles from "./table.module.css";
@@ -150,6 +151,28 @@ export const Table = (props) => {
       </table>
     </div>
   );
+};
+
+Table.propTypes = {
+  getInfo: PropTypes.func,
+  page: PropTypes.string,
+  book: PropTypes.string,
+  author: PropTypes.string,
+  BooksData: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      thumbnail: PropTypes.string,
+      title: PropTypes.string,
+      author: PropTypes.array,
+      publisher: PropTypes.string,
+      publishedDate: PropTypes.string,
+      pageCount: PropTypes.number,
+      language: PropTypes.string,
+      categories: PropTypes.array,
+      snippet: PropTypes.string,
+      description: PropTypes.string,
+    })
+  ),
 };
 
 export default Table;

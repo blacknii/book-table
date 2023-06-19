@@ -52,6 +52,8 @@ function App() {
         <Breadcrumbs arr={arr} />
         <Routes>
           <Route index element={<Search />} />
+
+          <Route path="/error" element={<NotFound />} />
           <Route
             path="/table"
             element={<Navigate to="/table/J. R. R. Tolkien/1" />}
@@ -74,7 +76,7 @@ function App() {
               <TableWithDetails breadcrumbsNavigation={breadcrumbsNavigation} />
             }
           />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<Navigate to="/error" />} />
         </Routes>
       </main>
       {/* <Books author={"James Brennan"} /> */}

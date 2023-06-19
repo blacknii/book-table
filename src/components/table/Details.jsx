@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 import styles from "./details.module.css";
 import defaultCover from "../../assets/default_cover.jpg"; // make sure the path to your image is correct
 
@@ -51,6 +51,25 @@ const Details = (props) => {
   };
 
   return <div className={styles["info"]}>{showInfo(props.data)}</div>;
+};
+
+Details.propTypes = {
+  data: PropTypes.string,
+  BooksData: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      thumbnail: PropTypes.string,
+      title: PropTypes.string,
+      author: PropTypes.array,
+      publisher: PropTypes.string,
+      publishedDate: PropTypes.string,
+      pageCount: PropTypes.number,
+      language: PropTypes.string,
+      categories: PropTypes.array,
+      snippet: PropTypes.string,
+      description: PropTypes.string,
+    })
+  ),
 };
 
 export default Details;
