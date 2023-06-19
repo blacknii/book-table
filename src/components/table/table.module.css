@@ -32,6 +32,10 @@ table th {
   cursor: auto;
 }
 
+.selected {
+  background-color: #a8dadc;
+}
+
 .pagination {
   display: flex;
   justify-content: center;

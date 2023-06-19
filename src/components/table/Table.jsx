@@ -54,9 +54,9 @@ export const Table = (props) => {
     let foundIndex = page.findIndex((row) => {
       return row.cells[0].value === props.book;
     });
-
+    foundIndex = foundIndex + 10 * (props.page - 1);
     setSelectedRowId(foundIndex.toString());
-  }, [props.book, page]);
+  }, [props.book, page, props.page]);
 
   return (
     <div>
@@ -114,11 +114,12 @@ export const Table = (props) => {
               <tr
                 {...row.getRowProps({
                   onClick: () => handleRowClick(row),
-                  style: {
-                    backgroundColor:
-                      row.id === selectedRowId ? "#f1faee" : "white",
-                  },
                 })}
+                className={
+                  row.id === selectedRowId
+                    ? `${row.getRowProps().className} ${styles["selected"]}`
+                    : `${row.getRowProps().className} ${styles[""]}`
+                }
               >
                 {row.cells.map((cell) => {
                   return (
