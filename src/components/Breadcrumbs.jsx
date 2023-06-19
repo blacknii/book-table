@@ -1,28 +1,27 @@
 import { useLocation, Link } from "react-router-dom";
 import styles from "./breadcrumbs.module.css";
-import PropTypes from "prop-types";
 
-function Breadcrumbs(props) {
-  const arr = props.arr;
+function Breadcrumbs() {
   const location = useLocation();
-  console.log(location.pathname.split("/"));
+  const pathnames = location.pathname.split("/").filter((x) => x);
+  // console.log(locationArr);
   return (
     <div className={styles["breadcrumbs"]}>
-      {location.pathname.includes("/table/") &&
-        arr.map(
-          (e) =>
-            e[1] && (
-              <Link key={e[1]} to={e[0]}>
-                {e[1]}
-              </Link>
-            )
-        )}
+      {pathnames.map((name, index) => {
+        const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
+        const decodedName = decodeURIComponent(name);
+
+        return index === pathnames.length - 1 ? (
+          <span key={name}>{decodedName}</span>
+        ) : (
+          <span key={name}>
+            <Link to={routeTo}>{decodedName}</Link>
+            {" / "}
+          </span>
+        );
+      })}
     </div>
   );
 }
-
-Breadcrumbs.propTypes = {
-  arr: PropTypes.array,
-};
 
 export default Breadcrumbs;

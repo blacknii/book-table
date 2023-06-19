@@ -46,7 +46,7 @@ export const Table = (props) => {
     setSelectedRowId(row.id);
     props.getInfo(row.allCells[0].value);
     navigate(
-      "/table/" +
+      "/search/" +
         props.author +
         "/" +
         (pageIndex + 1) +
@@ -79,7 +79,7 @@ export const Table = (props) => {
         <button
           onClick={() => {
             gotoPage(0);
-            navigate("/table/" + props.author);
+            navigate("/search/" + props.author);
           }}
           disabled={!canPreviousPage}
         >
@@ -88,7 +88,7 @@ export const Table = (props) => {
         <button
           onClick={() => {
             previousPage();
-            navigate("/table/" + props.author + "/" + pageIndex);
+            navigate("/search/" + props.author + "/" + pageIndex);
           }}
           disabled={!canPreviousPage}
         >
@@ -100,7 +100,7 @@ export const Table = (props) => {
         <button
           onClick={() => {
             nextPage();
-            navigate("/table/" + props.author + "/" + (pageIndex + 2));
+            navigate("/search/" + props.author + "/" + (pageIndex + 2));
           }}
           disabled={!canNextPage}
         >
@@ -109,7 +109,7 @@ export const Table = (props) => {
         <button
           onClick={() => {
             gotoPage(pageCount - 1);
-            navigate("/table/" + props.author + "/" + pageCount);
+            navigate("/search/" + props.author + "/" + pageCount);
           }}
           disabled={!canNextPage}
         >

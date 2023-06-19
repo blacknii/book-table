@@ -22,7 +22,7 @@ function Search() {
       <div className={styles["authors"]}>
         {authors.map((author) => (
           <Link
-            to={`table/${author}/1`}
+            to={`${author}/1`}
             className={styles["authorLink"]}
             key={author}
           >
