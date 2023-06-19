@@ -118,7 +118,7 @@ export const Table = (props) => {
                 className={
                   row.id === selectedRowId
                     ? `${row.getRowProps().className} ${styles["selected"]}`
-                    : `${row.getRowProps().className} ${styles[""]}`
+                    : `${row.getRowProps().className} ${styles["not-selected"]}`
                 }
               >
                 {row.cells.map((cell) => {

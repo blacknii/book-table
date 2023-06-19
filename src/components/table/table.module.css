@@ -36,6 +36,14 @@ table th {
   background-color: #a8dadc;
 }
 
+.not-selected {
+  background-color: #ffffff;
+}
+
+.not-selected:hover {
+  background-color: #a8dadc80;
+}
+
 .pagination {
   display: flex;
   justify-content: center;
