@@ -10,9 +10,7 @@ export const Table = (props) => {
   const data = useMemo(() => props.BooksData, [props.BooksData]);
   const navigate = useNavigate();
 
-  const [selectedRowId, setSelectedRowId] = useState(
-    String(props.page * 10 + (props.book - 1) - 10)
-  );
+  const [selectedRowId, setSelectedRowId] = useState(props.book);
 
   const {
     getTableProps,
@@ -25,8 +23,6 @@ export const Table = (props) => {
     pageOptions,
     pageCount,
     gotoPage,
-    nextPage,
-    previousPage,
     state: { pageIndex },
   } = useTable(
     {
@@ -55,25 +51,19 @@ export const Table = (props) => {
   }, [props.page, gotoPage]);
 
   useEffect(() => {
-    let filteredRows = page.filter((row) => {
+    let foundIndex = page.findIndex((row) => {
       return row.cells[0].value === props.book;
     });
 
-    let newId;
-    if (filteredRows.length > 0) {
-      newId = filteredRows[0].id;
-    }
-
-    setSelectedRowId(newId);
-  }, [props, props.book, page]);
+    setSelectedRowId(foundIndex.toString());
+  }, [props.book, page]);
 
   return (
     <div>
       <div className={styles["pagination"]}>
         <button
           onClick={() => {
-            gotoPage(0);
-            navigate("/search/" + props.author + "1");
+            navigate("/search/" + props.author + "/" + +"1");
           }}
           disabled={!canPreviousPage}
         >
@@ -81,7 +71,6 @@ export const Table = (props) => {
         </button>
         <button
           onClick={() => {
-            previousPage();
             navigate("/search/" + props.author + "/" + pageIndex);
           }}
           disabled={!canPreviousPage}
@@ -93,7 +82,6 @@ export const Table = (props) => {
         </span>
         <button
           onClick={() => {
-            nextPage();
             navigate("/search/" + props.author + "/" + (pageIndex + 2));
           }}
           disabled={!canNextPage}
@@ -102,7 +90,6 @@ export const Table = (props) => {
         </button>
         <button
           onClick={() => {
-            gotoPage(pageCount - 1);
             navigate("/search/" + props.author + "/" + pageCount);
           }}
           disabled={!canNextPage}
