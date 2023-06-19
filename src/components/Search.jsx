@@ -1,11 +1,11 @@
 import { useState } from "react";
 import styles from "./search.module.css";
 import { Link } from "react-router-dom";
-import { useAuthorData } from "../hooks/useAuthorData"; // import the new hook
+import { useAuthorData } from "../hooks/useAuthorData";
 
 function Search() {
   const [search, setSearch] = useState("");
-  const authors = useAuthorData(search); // use the new hook
+  const authors = useAuthorData(search);
 
   return (
     <div className={styles["search"]}>

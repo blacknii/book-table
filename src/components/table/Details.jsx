@@ -63,7 +63,7 @@ Details.propTypes = {
       author: PropTypes.array,
       publisher: PropTypes.string,
       publishedDate: PropTypes.string,
-      pageCount: PropTypes.number,
+      pageCount: PropTypes.string,
       language: PropTypes.string,
       categories: PropTypes.array,
       snippet: PropTypes.string,

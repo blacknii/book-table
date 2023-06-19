@@ -20,11 +20,11 @@ export function useBooksData(author) {
                 id: book.id,
                 title: book.volumeInfo.title || "N/A",
                 description: book.volumeInfo.description || "N/A",
-                categories: book.volumeInfo.categories || "N/A",
+                categories: book.volumeInfo.categories || ["N/A"],
                 publisher: book.volumeInfo.publisher || "N/A",
                 publishedDate: book.volumeInfo.publishedDate || "N/A",
                 pageCount: book.volumeInfo.pageCount
-                  ? book.volumeInfo.pageCount
+                  ? book.volumeInfo.pageCount.toString()
                   : "N/A",
                 language: book.volumeInfo.language || "N/A",
                 snippet:

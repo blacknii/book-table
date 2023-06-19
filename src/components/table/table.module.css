@@ -7,13 +7,13 @@ table {
 
 table td,
 table th {
-  border: 1px solid #a8dadc; /* Light blue for the border */
+  border: 1px solid #a8dadc;
   padding: 12px 15px;
 }
 
 table td:nth-child(1),
-table td:nth-child(4),
-table td:nth-child(5) {
+table td:nth-child(5),
+table td:nth-child(6) {
   text-align: center;
 }
 
@@ -26,7 +26,7 @@ table th {
   padding-top: 15px;
   padding-bottom: 15px;
   text-align: center;
-  background-color: #1d3557; /* Dark blue for headers */
+  background-color: #1d3557;
   color: white;
   font-weight: 600;
   cursor: auto;

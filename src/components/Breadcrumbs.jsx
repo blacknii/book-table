@@ -5,9 +5,8 @@ function Breadcrumbs() {
   const location = useLocation();
   const pathnames = location.pathname.split("/").filter((x) => x);
 
-  // If there's only one path segment, don't render the breadcrumbs
   if (pathnames.length < 2) {
-    return null; // or return any placeholder component
+    return null;
   }
 
   return (
