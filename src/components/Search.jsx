@@ -7,12 +7,6 @@ function Search() {
   const [search, setSearch] = useState("");
   const authors = useAuthorData(search); // use the new hook
 
-  const handleKeyPress = (evt) => {
-    if (evt.key === "Enter") {
-      setSearch(evt.target.value);
-    }
-  };
-
   return (
     <div className={styles["search"]}>
       <h1 className={styles["title"]}>AUTHORS</h1>
@@ -23,7 +17,6 @@ function Search() {
           placeholder="Enter Your Author Name"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          onKeyPress={handleKeyPress} // added handleKeyPress event
         />
       </div>
       <div className={styles["authors"]}>

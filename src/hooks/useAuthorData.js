@@ -27,7 +27,7 @@ export function useAuthorData(search) {
         })
         .catch((err) => console.log(err));
     }
-  }, [search]); // this will trigger when search changes
+  }, [search]);
 
   return authors;
 }
