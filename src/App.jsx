@@ -17,10 +17,10 @@ function App() {
           <Route path="/search" element={<Search />} />
 
           <Route path="/error" element={<NotFound />} />
-          <Route
-            path="/search/:author/"
-            element={<Navigate to={window.location.pathname + "1"} replace />}
-          />
+
+          <Route path="/search/:author/*" element={<TableWithDetails />} />
+          <Route path="/search/:author" element={<Navigate to="1" replace />} />
+
           <Route
             path="/search/:author/:pageId/"
             element={<TableWithDetails />}

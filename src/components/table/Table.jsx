@@ -79,7 +79,7 @@ export const Table = (props) => {
         <button
           onClick={() => {
             gotoPage(0);
-            navigate("/search/" + props.author);
+            navigate("/search/" + props.author + "1");
           }}
           disabled={!canPreviousPage}
         >

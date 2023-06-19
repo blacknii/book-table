@@ -4,7 +4,12 @@ import styles from "./breadcrumbs.module.css";
 function Breadcrumbs() {
   const location = useLocation();
   const pathnames = location.pathname.split("/").filter((x) => x);
-  // console.log(locationArr);
+
+  // If there's only one path segment, don't render the breadcrumbs
+  if (pathnames.length < 2) {
+    return null; // or return any placeholder component
+  }
+
   return (
     <div className={styles["breadcrumbs"]}>
       {pathnames.map((name, index) => {
