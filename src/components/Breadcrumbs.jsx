@@ -5,6 +5,7 @@ function Breadcrumbs() {
   const location = useLocation();
   const pathnames = location.pathname.split("/").filter((x) => x);
 
+  //Display breadcrumbs after the first page
   if (pathnames.length < 2) {
     return null;
   }

@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import styles from "./details.module.css";
 import defaultCover from "../../assets/default_cover.jpg";
 
-const Details = (props) => {
+function Details(props) {
   const showInfo = (index) => {
     const book = props.BooksData.find((row) => row.id === index);
     if (!book)
@@ -51,7 +51,7 @@ const Details = (props) => {
   };
 
   return <div className={styles["info"]}>{showInfo(props.bookId)}</div>;
-};
+}
 
 Details.propTypes = {
   bookId: PropTypes.string,

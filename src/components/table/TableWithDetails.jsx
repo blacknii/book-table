@@ -6,11 +6,13 @@ import { useParams } from "react-router-dom";
 import { useBooksData } from "../../hooks/useBooksData";
 
 function TableWithDetails() {
+  // Taking values from URL
   const params = useParams();
   const author = params.author;
   const pageId = params.pageId;
   const bookId = params.bookId;
 
+  // Fetching books data
   const BooksData = useBooksData(author);
 
   return (

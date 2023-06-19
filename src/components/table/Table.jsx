@@ -5,13 +5,14 @@ import { COLUMNS } from "./columns";
 import styles from "./table.module.css";
 import { useNavigate } from "react-router-dom";
 
-export const Table = (props) => {
+function Table(props) {
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => props.BooksData, [props.BooksData]);
   const navigate = useNavigate();
 
   const [selectedRowId, setSelectedRowId] = useState(props.book);
 
+  // Setuping up table
   const {
     getTableProps,
     getTableBodyProps,
@@ -34,6 +35,7 @@ export const Table = (props) => {
     useRowSelect
   );
 
+  // Handling row selection functionality
   const handleRowClick = (row) => {
     setSelectedRowId(row.id);
     navigate(
@@ -46,6 +48,7 @@ export const Table = (props) => {
     );
   };
 
+  // Updating page when props (URL) changes
   useEffect(() => {
     gotoPage(parseInt(props.page) - 1);
   }, [props.page, gotoPage]);
@@ -133,7 +136,7 @@ export const Table = (props) => {
       </table>
     </div>
   );
-};
+}
 
 Table.propTypes = {
   page: PropTypes.string,

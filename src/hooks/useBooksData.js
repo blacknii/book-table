@@ -6,6 +6,7 @@ export function useBooksData(author) {
   const [bookIDs, setBookIDs] = useState(new Set());
   const [startIndex, setStartIndex] = useState(0);
 
+  //Fetching books data and make sure IDs are unique
   useEffect(() => {
     const fetchBooks = async () => {
       axios

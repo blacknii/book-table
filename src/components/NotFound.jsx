@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./notFound.module.css";
 
-export default function NotFound() {
+function NotFound() {
   return (
     <div className={styles["notfound"]}>
       <h2>Page not found!</h2>
@@ -11,3 +11,5 @@ export default function NotFound() {
     </div>
   );
 }
+
+export default NotFound;

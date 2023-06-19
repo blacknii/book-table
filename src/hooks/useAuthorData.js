@@ -4,6 +4,7 @@ import axios from "axios";
 export function useAuthorData(search) {
   const [authors, setAuthors] = useState([]);
 
+  // Fetching authors data if search change
   useEffect(() => {
     if (search) {
       axios
