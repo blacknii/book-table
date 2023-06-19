@@ -4,7 +4,7 @@ import Details from "./Details";
 import styles from "./tableWithDetails.module.css";
 
 import { useParams } from "react-router-dom";
-import { useBooksData } from "../../data/useBooksData";
+import { useBooksData } from "../../hooks/useBooksData";
 
 function TableWithDetails(props) {
   const params = useParams();

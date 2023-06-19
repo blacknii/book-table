@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export function useAuthorData(search) {
+  const key = "AIzaSyD9AulRjx3A6ZJb7cP4e_t1r8Ow0pyfuXw";
   const [authors, setAuthors] = useState([]);
 
   useEffect(() => {
@@ -10,7 +11,8 @@ export function useAuthorData(search) {
         .get(
           "https://www.googleapis.com/books/v1/volumes?q=inauthor:" +
             search +
-            "&key=AIzaSyD9AulRjx3A6ZJb7cP4e_t1r8Ow0pyfuXw"
+            "&key=" +
+            key
         )
         .then((res) => {
           let authorsSet = new Set();

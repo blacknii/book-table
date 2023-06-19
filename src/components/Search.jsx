@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./search.module.css";
 import { Link } from "react-router-dom";
-import { useAuthorData } from "../data/useAuthorData"; // import the new hook
+import { useAuthorData } from "../hooks/useAuthorData"; // import the new hook
 
 function Search() {
   const [search, setSearch] = useState("");
