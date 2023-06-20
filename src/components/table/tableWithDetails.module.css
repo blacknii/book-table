@@ -1,10 +1,15 @@
 .table {
   display: flex;
-  flex-direction: column;
   max-width: 1500px;
   gap: 50px;
-  align-items: center;
   margin: 6rem 3rem;
+  align-items: flex-start;
+}
+
+@media (max-width: 1400px) {
+  .table {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 1000px) {

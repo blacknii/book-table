@@ -63,6 +63,40 @@ function Table(props) {
 
   return (
     <div className={styles["table"]}>
+      <table {...getTableProps()}>
+        <thead>
+          {headerGroups.map((headerGroup) => (
+            <tr {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column) => (
+                <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+              ))}
+            </tr>
+          ))}
+        </thead>
+        <tbody {...getTableBodyProps()}>
+          {page.map((row) => {
+            prepareRow(row);
+            return (
+              <tr
+                {...row.getRowProps({
+                  onClick: () => handleRowClick(row),
+                })}
+                className={
+                  row.id === selectedRowId
+                    ? `${row.getRowProps().className} ${styles["selected"]}`
+                    : `${row.getRowProps().className} ${styles["not-selected"]}`
+                }
+              >
+                {row.cells.map((cell) => {
+                  return (
+                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                  );
+                })}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
       <div className={styles["pagination"]}>
         <button
           onClick={() => {
@@ -100,40 +134,6 @@ function Table(props) {
           {"Last"}
         </button>
       </div>
-      <table {...getTableProps()}>
-        <thead>
-          {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()}>{column.render("Header")}</th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody {...getTableBodyProps()}>
-          {page.map((row) => {
-            prepareRow(row);
-            return (
-              <tr
-                {...row.getRowProps({
-                  onClick: () => handleRowClick(row),
-                })}
-                className={
-                  row.id === selectedRowId
-                    ? `${row.getRowProps().className} ${styles["selected"]}`
-                    : `${row.getRowProps().className} ${styles["not-selected"]}`
-                }
-              >
-                {row.cells.map((cell) => {
-                  return (
-                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                  );
-                })}
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
     </div>
   );
 }
