@@ -94,11 +94,33 @@ table th {
 
   .pagination button {
     padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 700px) {
   table {
     font-size: 0.6rem;
+  }
+
+  table td,
+  table th {
+    padding: 6px 8px;
+  }
+
+  .pagination {
+    gap: 0.4rem;
+    font-size: 0.7rem;
+  }
+
+  .pagination button {
+    padding: 0.2rem 0.3rem;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 500px) {
+  table {
+    font-size: 0.5rem;
   }
 }

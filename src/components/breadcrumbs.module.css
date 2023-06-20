@@ -24,3 +24,15 @@
 .breadcrumbs a:last-child::after {
   content: "";
 }
+
+@media (max-width: 1000px) {
+  .breadcrumbs {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .breadcrumbs {
+    font-size: 0.8rem;
+  }
+}

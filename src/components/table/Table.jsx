@@ -62,7 +62,7 @@ function Table(props) {
   }, [props.book, page, props.page]);
 
   return (
-    <div>
+    <div className={styles["table"]}>
       <div className={styles["pagination"]}>
         <button
           onClick={() => {
